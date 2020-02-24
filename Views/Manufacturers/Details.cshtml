@@ -1,0 +1,36 @@
+﻿@model Assignment1.Models.Manufacturers
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Manufacturers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer_Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer_Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WebsiteName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WebsiteName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Founded)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Founded)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Manufacturer_ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

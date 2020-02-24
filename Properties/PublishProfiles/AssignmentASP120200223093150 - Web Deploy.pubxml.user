@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeF6iBVx/O02q9vCMe8hlrgAAAAACAAAAAAAQZgAAAAEAACAAAABpD53fSzFdOGvxAyaygJMpsUauh5j72B9XsfLBaksjygAAAAAOgAAAAAIAACAAAAA72PP/GCDq9dlh0U0GJaTKrP8hb7tPLxJtCPMDAotuhIAAAABTnyErEi7aqyvScjFSP0AXD4UV+RWQVdzn+7vipmZteg6FfFT6Qrq7h7hNWrC35k9oHaEWF0IfFlyx5OlDZvXLU91w23IZJ+kJsnZIHgbHTdUE2WNgcHezLmiPHvUiPry95Z3STsTAtVOvtHb5r7VcuFrSssn+Qb9lR8EL4m7dBEAAAAAGwfpX1nYDJVNsy3VVpUXQOk+W/6lCbBa9AaYJL5xjJtUKuVOOOMGLehLWKc8c4wYgK1vWwJh7ls5OpeXxZciI</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:assignmentasp120200223093150dbserver.database.windows.net,1433%3bInitial Catalog=AssignmentASP120200223093150_db%3bUser Id=AdminUser%40assignmentasp120200223093150dbserver%3bPassword=Test123!%40#</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
