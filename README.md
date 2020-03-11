@@ -2,9 +2,8 @@
 
 "Assignment-2a"
 1. Used Identity.sql script to create the necessary ASPNET Identity tables in database.
-2.  
-  a.) Configured Identity in Startup.cs.
-  b.) Changed DbContext class so it inherits from IdentityDbContext.
+2. Configured Identity in Startup.cs.
+   Changed DbContext class so it inherits from IdentityDbContext.
 
 3. Used Authentication 
     a.) Register and Login show when the user is anonymous. Done
