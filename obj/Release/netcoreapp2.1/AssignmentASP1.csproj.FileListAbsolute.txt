@@ -8,7 +8,6 @@ C:\Users\Rupinderjeet\source\repos\AssignmentASP1\bin\Release\netcoreapp2.1\Assi
 C:\Users\Rupinderjeet\source\repos\AssignmentASP1\bin\Release\netcoreapp2.1\AssignmentASP1.pdb
 C:\Users\Rupinderjeet\source\repos\AssignmentASP1\bin\Release\netcoreapp2.1\AssignmentASP1.Views.dll
 C:\Users\Rupinderjeet\source\repos\AssignmentASP1\bin\Release\netcoreapp2.1\AssignmentASP1.Views.pdb
-C:\Users\Rupinderjeet\source\repos\AssignmentASP1\obj\Release\netcoreapp2.1\AssignmentASP1.csprojAssemblyReference.cache
 C:\Users\Rupinderjeet\source\repos\AssignmentASP1\obj\Release\netcoreapp2.1\AssignmentASP1.RazorAssemblyInfo.cache
 C:\Users\Rupinderjeet\source\repos\AssignmentASP1\obj\Release\netcoreapp2.1\AssignmentASP1.RazorAssemblyInfo.cs
 C:\Users\Rupinderjeet\source\repos\AssignmentASP1\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs
@@ -45,3 +44,4 @@ C:\Users\Rupinderjeet\source\repos\AssignmentASP1\obj\Release\netcoreapp2.1\Assi
 C:\Users\Rupinderjeet\source\repos\AssignmentASP1\obj\Release\netcoreapp2.1\AssignmentASP1.dll
 C:\Users\Rupinderjeet\source\repos\AssignmentASP1\obj\Release\netcoreapp2.1\AssignmentASP1.pdb
 C:\Users\Rupinderjeet\source\repos\AssignmentASP1\obj\Release\netcoreapp2.1\AssignmentASP1.csproj.CopyComplete
+C:\Users\Rupinderjeet\source\repos\AssignmentASP1\obj\Release\netcoreapp2.1\AssignmentASP1.csprojAssemblyReference.cache
