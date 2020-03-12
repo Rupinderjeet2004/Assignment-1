@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssignmentASP1.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200311002045_Initial Create")]
+    [Migration("20200312164718_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,6 +53,8 @@ namespace AssignmentASP1.Data.Migrations
                     b.Property<string>("Product_Name");
 
                     b.HasKey("Product_ID");
+
+                    b.HasIndex("Manufacturer_ID");
 
                     b.ToTable("Products");
                 });
@@ -220,6 +222,14 @@ namespace AssignmentASP1.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Assignment1.Models.Products", b =>
+                {
+                    b.HasOne("Assignment1.Models.Manufacturers", "Manufacturers")
+                        .WithMany("ProductList")
+                        .HasForeignKey("Manufacturer_ID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

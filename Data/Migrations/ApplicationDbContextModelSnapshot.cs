@@ -52,6 +52,8 @@ namespace AssignmentASP1.Data.Migrations
 
                     b.HasKey("Product_ID");
 
+                    b.HasIndex("Manufacturer_ID");
+
                     b.ToTable("Products");
                 });
 
@@ -218,6 +220,14 @@ namespace AssignmentASP1.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Assignment1.Models.Products", b =>
+                {
+                    b.HasOne("Assignment1.Models.Manufacturers", "Manufacturers")
+                        .WithMany("ProductList")
+                        .HasForeignKey("Manufacturer_ID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

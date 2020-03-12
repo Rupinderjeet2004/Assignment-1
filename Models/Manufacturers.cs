@@ -8,6 +8,13 @@ namespace Assignment1.Models
 {
     public class Manufacturers
     {
+        //Changed This
+        public Manufacturers()
+        {
+            Manufacturer_Name = "";
+            WebsiteName = "";
+            ProductList = new List<Products>();
+        }
 
         [Key]
         public int Manufacturer_ID { get; set; }
@@ -15,5 +22,7 @@ namespace Assignment1.Models
         public string WebsiteName { get; set; }
         public DateTime Founded { get; set; }
 
+        //Changed this
+        public virtual ICollection<Products> ProductList { get; set; }
     }
 }

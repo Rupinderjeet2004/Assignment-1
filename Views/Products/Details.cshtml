@@ -29,17 +29,14 @@
             @Html.DisplayFor(model => model.Price)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Manufacturer_ID)
+            @Html.DisplayNameFor(model => model.Manufacturers)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Manufacturer_ID)
+            @Html.DisplayFor(model => model.Manufacturers.Manufacturer_ID)
         </dd>
     </dl>
 </div>
 <div>
-    @if (User.Identity.IsAuthenticated)
-    {
-        <a asp-action="Edit" asp-route-id="@Model.Product_ID">Edit</a>
-    }
+    <a asp-action="Edit" asp-route-id="@Model.Product_ID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

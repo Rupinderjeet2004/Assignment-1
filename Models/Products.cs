@@ -9,6 +9,12 @@ namespace Assignment1.Models
 {
     public class Products
     {
+        //Changed this
+        public Products()
+        {
+            Product_Name = "";
+            Product_Description = "";
+        }
 
         [Key]
         public int Product_ID { get; set; }
@@ -18,6 +24,9 @@ namespace Assignment1.Models
 
         [ForeignKey("Manufacturers")]
         public int Manufacturer_ID { get; set; }
+
+        //Changed this
+        public virtual Manufacturers Manufacturers { get; set; }
 
     }
 }

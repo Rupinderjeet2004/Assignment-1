@@ -5,11 +5,3 @@
 2. Configured Identity in Startup.cs.
    Changed DbContext class so it inherits from IdentityDbContext.
 
-3. Used Authentication 
-    a.) Register and Login show when the user is anonymous. Done
-    b.) Register and Login are replaced in the header by the username and Logout when the user is authenticated. Done 
-    c.) Created an account with these credentials:
- 	-> marie@gc.ca / Test123$
-4. 
-  a.) Only authenticated users can now add, edit and delete data.
-  b.) Only anonymous users can view the list of data but cannot see the Create, Edit, or Delete links.

@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Assignment1.Models;
 using AssignmentASP1.Data;
-using Microsoft.AspNetCore.Authorization;
 
 namespace AssignmentASP1.Controllers
 {
-    [Authorize]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,13 +18,14 @@ namespace AssignmentASP1.Controllers
         {
             _context = context;
         }
-        [AllowAnonymous]
+
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Products.ToListAsync());
+            var applicationDbContext = _context.Products.Include(p => p.Manufacturers);
+            return View(await applicationDbContext.ToListAsync());
         }
-        [AllowAnonymous]
+
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -36,6 +35,7 @@ namespace AssignmentASP1.Controllers
             }
 
             var products = await _context.Products
+                .Include(p => p.Manufacturers)
                 .FirstOrDefaultAsync(m => m.Product_ID == id);
             if (products == null)
             {
@@ -48,6 +48,7 @@ namespace AssignmentASP1.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            ViewData["Manufacturer_ID"] = new SelectList(_context.Manufacturers, "Manufacturer_ID", "Manufacturer_ID");
             return View();
         }
 
@@ -64,6 +65,7 @@ namespace AssignmentASP1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Manufacturer_ID"] = new SelectList(_context.Manufacturers, "Manufacturer_ID", "Manufacturer_ID", products.Manufacturer_ID);
             return View(products);
         }
 
@@ -80,6 +82,7 @@ namespace AssignmentASP1.Controllers
             {
                 return NotFound();
             }
+            ViewData["Manufacturer_ID"] = new SelectList(_context.Manufacturers, "Manufacturer_ID", "Manufacturer_ID", products.Manufacturer_ID);
             return View(products);
         }
 
@@ -115,6 +118,7 @@ namespace AssignmentASP1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Manufacturer_ID"] = new SelectList(_context.Manufacturers, "Manufacturer_ID", "Manufacturer_ID", products.Manufacturer_ID);
             return View(products);
         }
 
@@ -127,6 +131,7 @@ namespace AssignmentASP1.Controllers
             }
 
             var products = await _context.Products
+                .Include(p => p.Manufacturers)
                 .FirstOrDefaultAsync(m => m.Product_ID == id);
             if (products == null)
             {
