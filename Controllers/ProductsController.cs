@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Assignment1.Models;
 using AssignmentASP1.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AssignmentASP1.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -18,14 +20,14 @@ namespace AssignmentASP1.Controllers
         {
             _context = context;
         }
-
+        [AllowAnonymous]
         // GET: Products
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Products.Include(p => p.Manufacturers);
             return View(await applicationDbContext.ToListAsync());
         }
-
+        [AllowAnonymous]
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {

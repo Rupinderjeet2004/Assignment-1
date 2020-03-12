@@ -1,14 +1,16 @@
 ﻿@model IEnumerable<Assignment1.Models.Products>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Products";
 }
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h2>Products</h2>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -44,11 +46,15 @@
                     @Html.DisplayFor(modelItem => item.Manufacturers.Manufacturer_ID)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Product_ID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Product_ID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Product_ID">Delete</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <p>
+                            <a asp-action="Edit" asp-route-id="@item.Product_ID">Edit</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Product_ID">Delete</a>
+                        </p>
+                    }
+                    <a asp-action="Details" asp-route-id="@item.Product_ID">Details</a>
                 </td>
-
             </tr>
         }
     </tbody>
